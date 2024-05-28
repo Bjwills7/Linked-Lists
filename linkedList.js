@@ -1,3 +1,5 @@
+const util = require("util");
+
 class LinkedList {
   constructor() {
     this.head = null;
@@ -41,4 +43,4 @@ list.prepend(2);
 list.append(3);
 list.append(4);
 
-console.log(list);
+console.log(util.inspect(list, { depth: null }));
