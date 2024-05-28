@@ -5,17 +5,15 @@ class LinkedList {
 
   append(value) {
     if (this.head === null) {
-      this.prepend(value);
-    } else if (this.next === null) {
-      this.next = new Node(value);
+      this.head = new Node(value);
     } else {
       var nextNode = this.head;
+
       while (nextNode.next !== null) {
         nextNode = nextNode.next;
       }
+
       nextNode.next = new Node(value);
-      console.log(nextNode);
-      console.log(nextNode.next);
     }
   }
 
