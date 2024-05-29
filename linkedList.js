@@ -109,10 +109,17 @@ class LinkedList {
   insertAt(value, index) {
     var node = new Node(value);
     var before = this.at(index - 1);
-    var current = this.at(index);
+    var current = before.next;
 
     node.next = current;
     before.next = node;
+  }
+
+  removeAt(index) {
+    var before = this.at(index - 1);
+    var after = before.next.next;
+
+    before.next = after;
   }
 }
 
@@ -131,4 +138,6 @@ list.append(4);
 
 console.log(util.inspect(list, { depth: null }));
 list.insertAt(7, 2);
+console.log(util.inspect(list, { depth: null }));
+list.removeAt(2);
 console.log(util.inspect(list, { depth: null }));
