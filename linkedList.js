@@ -105,6 +105,15 @@ class LinkedList {
     str = str.concat(`${node}`);
     return str;
   }
+
+  insertAt(value, index) {
+    var node = new Node(value);
+    var before = this.at(index - 1);
+    var current = this.at(index);
+
+    node.next = current;
+    before.next = node;
+  }
 }
 
 class Node {
@@ -121,4 +130,5 @@ list.append(3);
 list.append(4);
 
 console.log(util.inspect(list, { depth: null }));
-console.log(list.toString());
+list.insertAt(7, 2);
+console.log(util.inspect(list, { depth: null }));
