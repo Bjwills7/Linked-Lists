@@ -93,6 +93,18 @@ class LinkedList {
     }
     return null;
   }
+
+  toString() {
+    var node = this.head;
+    var str = "";
+
+    while (node !== null) {
+      str = str.concat(`(${node.value}) -> `);
+      node = node.next;
+    }
+    str = str.concat(`${node}`);
+    return str;
+  }
 }
 
 class Node {
@@ -109,5 +121,4 @@ list.append(3);
 list.append(4);
 
 console.log(util.inspect(list, { depth: null }));
-list.pop();
-console.log(list.find(7));
+console.log(list.toString());
