@@ -1,4 +1,4 @@
-const util = require("util");
+const util = require("util"); // only used to log the entire list in node for testing purposes
 
 class LinkedList {
   #size;
@@ -136,8 +136,4 @@ list.prepend(2);
 list.append(3);
 list.append(4);
 
-console.log(util.inspect(list, { depth: null }));
-list.insertAt(7, 2);
-console.log(util.inspect(list, { depth: null }));
-list.removeAt(2);
 console.log(util.inspect(list, { depth: null }));
